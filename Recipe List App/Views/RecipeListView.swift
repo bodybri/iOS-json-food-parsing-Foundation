@@ -35,7 +35,7 @@ struct RecipeListView: View {
                                         Image(r.image)
                                             .resizable()
                                             .scaledToFill()
-                                            .frame(width: 60, height: 60, alignment:.center)
+                                            .frame(width: 75, height: 75, alignment:.center)
                                             .clipped()
                                             .cornerRadius(5)
                                         Text(r.name)
@@ -49,6 +49,7 @@ struct RecipeListView: View {
             }
             .navigationBarHidden(true)
             .padding(.leading)
+            .padding(.bottom)
         }
         
     }
