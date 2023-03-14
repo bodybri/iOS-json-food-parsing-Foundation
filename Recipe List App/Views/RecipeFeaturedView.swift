@@ -26,7 +26,8 @@ struct RecipeFeaturedView: View {
                 TabView {
                     
                     // loop through each recipe
-                    ForEach (0..<model.recipes.count) { index in
+                    ForEach(Array(model.recipes.enumerated()), id: \.element.id) { index, recipe in
+                    //ForEach (0..<model.recipes.count) { index in
                         
                         // Only show those that should be featured
                         if model.recipes[index].featured == true {
@@ -46,7 +47,7 @@ struct RecipeFeaturedView: View {
                                 }
                             }.frame(width: geo.size.width - 40, height: geo.size.height - 100, alignment: .center)
                                 .cornerRadius(15)
-                                .shadow(color: Color(.init(srgbRed: 0, green: 0, blue: 0, alpha: 0.6)), radius: 10, x:-5, y: 5)
+                                .shadow(color: Color(.init(srgbRed: 0, green: 0, blue: 0, alpha: 0.4)), radius: 10, x:-5, y: 5)
                             
                             
                         }
@@ -55,6 +56,7 @@ struct RecipeFeaturedView: View {
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+                .shadow(color: .gray, radius: 10)
             }
             
             VStack (alignment: .leading, spacing: 5) {
