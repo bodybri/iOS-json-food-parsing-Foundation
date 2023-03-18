@@ -22,7 +22,7 @@ struct RecipeDetailView: View {
                 Text(recipe.name)
                     .bold()
                     .padding(.leading)
-                    .font(.largeTitle)
+                    .font(Font.custom("Avenir Heavy", size: 24))
                 // MARK: Recipe Image
                 Image(recipe.image)
                     .resizable()
@@ -54,6 +54,7 @@ struct RecipeDetailView: View {
                     ForEach (recipe.ingredients) { item in
                         Text("~ " + RecipeModel.getPortion(ingredient: item, recipeServings: recipe.servings, targetServings: selectedServingSize) + " " + item.name.lowercased())
                     }
+                    .font(Font.custom("Avenir", size: 16))
                     
                 }
                 .padding(.horizontal , 10)
@@ -69,6 +70,7 @@ struct RecipeDetailView: View {
                             .padding(.bottom, 5)
                         
                     }
+                    .font(Font.custom("Avenir", size: 16))
                 }
                 .padding(.horizontal , 10)
             }
