@@ -21,7 +21,7 @@ struct RecipeDetailView: View {
                 
                 Text(recipe.name)
                     .bold()
-                    .padding(.leading)
+                    .padding([.top, .leading])
                     .font(Font.custom("Avenir Heavy", size: 24))
                 // MARK: Recipe Image
                 Image(recipe.image)

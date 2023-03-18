@@ -38,7 +38,7 @@ struct RecipeFeaturedView: View {
                 TabView(selection: $tabSelectionIndex) {
                     
                     // loop through each recipe
-                    ForEach(0..<featuredRecipe.count) { index in
+                    ForEach(0..<featuredRecipe.count, id: \.self) { index in
                         //ForEach (0..<model.recipes.count) { index in
                         
                         
@@ -82,7 +82,7 @@ struct RecipeFeaturedView: View {
             VStack (alignment: .leading, spacing: 5) {
                 Text("Preparation Time:")
                     .bold()
-                Text(model.recipes[tabSelectionIndex].prepTime)
+                Text(featuredRecipe[tabSelectionIndex].prepTime)
                 Text("Highlights")
                     .bold()
                 RecipeHighlights(highlights: model.recipes[tabSelectionIndex].highlights)
