@@ -35,7 +35,7 @@ struct RecipeFeaturedView: View {
             
             GeometryReader { geo in
                 
-                TabView {
+                TabView(selection: $tabSelectionIndex) {
                     
                     // loop through each recipe
                     ForEach(0..<featuredRecipe.count) { index in
